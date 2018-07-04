@@ -5,6 +5,7 @@ from .models import Detail, IOT, EH, AR, ML
 
 abc = None
 xyz=None
+pqr=None
 
 # Create your views here.
 @login_required(login_url='/login')
@@ -13,9 +14,11 @@ def details(request):
         form = DetailsForm(request.POST)
         post = Detail()
         global abc
-        global xyz 
+        global pqr
+        global xyz
         abc=request.POST.get('name')
         xyz=request.POST.get('phone')
+        pqr=request.POST.get('course')
         post.course = request.POST.get('course')
         if form.is_valid():
             post = form.save(commit=False)
@@ -97,14 +100,14 @@ def iot(request):
             ch+=1
             IOT.objects.filter(name=abc, phone=xyz).update(score=ch)
         
-        Detail.objects.filter(name=abc,phone=xyz).update(score=ch)
+        Detail.objects.filter(name=abc,phone=xyz,course=pqr).update(score=ch)
         IOT.objects.filter(name=abc, phone=xyz).update(score=ch)
         return redirect('/logout/')
     else:
         post2 = IOT(name=abc, phone=xyz)
         post2.user = request.user
         post2.save()
-        return render(request, 'quest/IOT.html', stu )
+        return render(request, 'quest/IOT.html')
 
 
 @login_required(login_url='/details')
@@ -174,7 +177,7 @@ def eh(request):
             ch+=1
             EH.objects.filter(name=abc,phone=xyz).update(score=ch)
         
-        Detail.objects.filter(name=abc,phone=xyz).update(score=ch)
+        Detail.objects.filter(name=abc,phone=xyz,course=pqr).update(score=ch)
         EH.objects.filter(name=abc,phone=xyz).update(score=ch)
         return redirect('/logout/')
     else:
@@ -253,7 +256,7 @@ def ar(request):
             ch+=1
             AR.objects.filter(name=abc,phone=xyz).update(score=ch)
         
-        Detail.objects.filter(name=abc,phone=xyz).update(score=ch)
+        Detail.objects.filter(name=abc,phone=xyz,course=pqr).update(score=ch)
         AR.objects.filter(name=abc,phone=xyz).update(score=ch)
         return redirect('/logout/')
     else:
@@ -332,7 +335,7 @@ def ml(request):
             ch+=1
             ML.objects.filter(name=abc,phone=xyz).update(score=ch)
         
-        Detail.objects.filter(name=abc,phone=xyz).update(score=ch)
+        Detail.objects.filter(name=abc,phone=xyz,course=pqr).update(score=ch)
         ML.objects.filter(name=abc,phone=xyz).update(score=ch)
         return redirect('/logout/')
     else:

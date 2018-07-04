@@ -1,99 +1,696 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Machine Learning</title>
-        <h1 align="center">Questions</h1>
-    </head>
-    <body>
-        <form method="post" id="score">
-            {% csrf_token %}
-            <ol>
-                <li>Q1</li>
-                <label>
-                <input type="radio" name="q1"  value="1"> 1
-                <input type="radio" name="q1"  value="2"> 2
-                <input type="radio" name="q1"  value="3"> 3
-                <input type="radio" name="q1"  value="4"> 4
-                </label>
+<html lang="en">
+<head>
+  <title>Questions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+ body, html {
+    height: 100%;
+	width: 100%;
+    margin: 0px;
+	background-color: #efdcc3;
+}
+p{
+  font-size: 22px;
+}
+
+.navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+	  color: #fff;
+    }
+.nav2 {
+	 margin-top: 50px;
+	 background-image: url('https://gdurl.com/h2Nc');
+	 height: 30%;
+	 border-bottom: 20px solid black;
+	 
+	}
+	
+.bg
+	{
+		width:340px;
+		height:130px;
+		background: #000;
+		color: #fff;
+		top:50%;
+		left:38%;
+		position: absolute;
+		box-sizing:border-box;
+		padding:20px 20px;
+		border-radius:25px;
+		font-size: 80px;
+		border: 2px solid grey;
+		margin: 0;
+	}
+
+	.q1
+	{
+		width:900px;
+		height:2000px;
+		background:#8d6025;
+		color:#fff;
+		left: 19%;
+		position: absolute ;
+		box-sizing:border-box;
+		padding:20px 40px;
+		border-radius:15px;
+		font-family: Times New Roman;
+		font-size: 15px;
+		box-shadow: 10px 10px black;
+		margin-bottom: 20px;
+		
+	}
+.rules
+	{
+		width:900px;
+		height:200px;
+		background:#8d6025;
+		color:#fff;
+		left: 19%;
+		top: 38%;
+		position: absolute ;
+		box-sizing:border-box;
+		padding:20px 40px;
+		border-radius:15px;
+		font-family: Times New Roman;
+		font-size: 22px;
+		box-shadow: 10px 10px black;
+		
+	}
+@media screen and (min-width:450px)  {
+ .bg{
+  max-width: 180px;
+  max-height: 100px;
+  left:15%;
+  top: 20%;
+  font-size: 40px;
+ }
+ p{
+ font-size: 15px;
+ }
+ .nav2 {
+	 margin-top: 50px;
+	 background-image: url('https://gdurl.com/h2Nc');
+	 height: 10%;
+	 border-bottom: 20px solid black;
+	 
+	}
+
+  .q1
+	{
+
+
+		left: 19%;
+		top: 60%;
+		width:100px;
+		height:2830px;
+		position: absolute ;
+		font-family: Times New Roman;
+		font-size: 20px;
+	}
+.rules
+	{
+
+		width:100px;
+		height:200px;
+		background:#8d6025;
+		color:#fff;
+		left: 19%;
+		top: 38%;
+		position: absolute ;
+		box-sizing:border-box;
+		padding:20px 40px;
+		border-radius:15px;
+		font-family: Times New Roman;
+		font-size: 22px;
+		box-shadow: 10px 10px black;
+	}
+
+ .b1{
+ 	top:465%; 
+ 	width:200px; 
+ 	height:90px; 
+ 	left: 21% ;
+ 	padding:0px 30px;
+ }
+}
+@media screen and (min-width:451px) and (max-width:540px) {
+ .bg{
+  max-width: 180px;
+  max-height: 100px;
+  left:25%;
+  top: 20%;
+  font-size: 40px;
+ }
+ p{
+ font-size: 15px;
+ }
+ .nav2 {
+	 margin-top: 50px;
+	 background-image: url('https://gdurl.com/h2Nc');
+	 height: 30%;
+	 border-bottom: 20px solid black;
+	 
+	}
+
+ .q1
+	{
+
+
+		left: 19%;
+		top: 60%;
+		width:300px;
+		height:2830px;
+		position: absolute ;
+		font-family: Times New Roman;
+		font-size: 20px;
+	}
+.rules
+	{
+
+		width:300px;
+		height:200px;
+		background:#8d6025;
+		color:#fff;
+		left: 19%;
+		top: 38%;
+		position: absolute ;
+		box-sizing:border-box;
+		padding:20px 40px;
+		border-radius:15px;
+		font-family: Times New Roman;
+		font-size: 22px;
+		box-shadow: 10px 10px black;
+	}
+
+.b1{
+ 	top:650%; 
+ 	width:200px; 
+ 	height:90px; 
+ 	left: 31% ;
+ 	padding:0px 30px;
+ }
+}
+@media screen and (min-width:541px) and (max-width:768px)  {
+ .bg{
+  max-width: 200px;
+  max-height: 100px;
+  left:39%;
+  top: 15%;
+  font-size: 45px;
+ }
+ p{
+ font-size: 20px;
+ }
+ .nav2 {
+	 margin-top: 50px;
+	 background-image: url('https://gdurl.com/h2Nc');
+	 height: 30%;
+	 border-bottom: 20px solid black;
+	 
+	}
+
+ .q1
+	{
+
+		left: 19%;
+		top: 60%;
+		width:400px;
+		height:2830px;
+		position: absolute ;
+		font-family: Times New Roman;
+		font-size: 20px;
+	}
+.rules
+	{
+
+		width:400px;
+		height:200px;
+		background:#8d6025;
+		color:#fff;
+		left: 19%;
+		top: 38%;
+		position: absolute ;
+		box-sizing:border-box;
+		padding:20px 40px;
+		border-radius:15px;
+		font-family: Times New Roman;
+		font-size: 22px;
+		box-shadow: 10px 10px black;
+	}
+
+.b1{
+ 	top:600%; 
+ 	width:200px; 
+ 	height:90px; 
+ 	left: 41% ;
+ 	padding:0px 30px;
+ }
+}
+@media screen and (min-width:769px) and (max-width:1024px) {
+ .bg{
+  max-width: 270px;
+  max-height: 200px;
+  left:40%;
+  top: 15%;
+  font-size: 65px;
+ }
+ p{
+ font-size: 20px;
+ }
+ .nav2 {
+	 margin-top: 50px;
+	 background-image: url('https://gdurl.com/h2Nc');
+	 height: 30%;
+	 border-bottom: 20px solid black;
+	 
+	}
+
+  .q1
+	{
+
+
+		left: 19%;
+		top: 60%;
+		width:500px;
+		height:2830px;
+		position: absolute ;
+		font-family: Times New Roman;
+		font-size: 20px;
+		
+	}
+.rules
+	{
+
+		width:500px;
+		height:200px;
+		background:#8d6025;
+		color:#fff;
+		left: 19%;
+		top: 38%;
+		position: absolute ;
+		box-sizing:border-box;
+		padding:20px 40px;
+		border-radius:15px;
+		font-family: Times New Roman;
+		font-size: 22px;
+		box-shadow: 10px 10px black;
+	}
+
+.b1{
+ 	top:520%; 
+ 	width:200px; 
+ 	height:90px; 
+ 	left: 41% ;
+ 	padding:0px 30px;
+ }
+ }
+
+ @media screen and (min-width:1025px) and (max-width:1200px) {
+ .bg{
+  max-width: 270px;
+  max-height: 200px;
+  left:40%;
+  top: 15%;
+  font-size: 65px;
+ }
+ p{
+ font-size: 20px;
+ }
+ .nav2 {
+	 margin-top: 50px;
+	 background-image: url('https://gdurl.com/h2Nc');
+	 height: 30%;
+	 border-bottom: 20px solid black;
+	 
+	}
+
+   .q1
+	{
+
+		left: 19%;
+		top: 60%;
+		width:700px;
+		height:2830px;
+		position: absolute ;
+		font-family: Times New Roman;
+		font-size: 20px;
+		
+	}
+.rules
+	{
+
+		width:700px;
+		height:200px;
+		background:#8d6025;
+		color:#fff;
+		left: 19%;
+		top: 38%;
+		position: absolute ;
+		box-sizing:border-box;
+		padding:20px 40px;
+		border-radius:15px;
+		font-family: Times New Roman;
+		font-size: 22px;
+		box-shadow: 10px 10px black;
+	}
+
+.b1{
+ 	top:605%; 
+ 	width:200px; 
+ 	height:90px; 
+ 	left: 41% ;
+ 	padding:0px 30px;
+ }
+ }
+
+  @media screen and (min-width:1201px) {
+ .bg{
+  max-width: 270px;
+  max-height: 200px;
+  left:40%;
+  top: 15%;
+  font-size: 65px;
+ }
+ p{
+ font-size: 20px;
+ }
+ .nav2 {
+	 margin-top: 50px;
+	 background-image: url('https://gdurl.com/h2Nc');
+	 height: 30%;
+	 border-bottom: 20px solid black;
+	 
+	}
+
+    .q1
+	{
+		left: 19%;
+		top: 60%;
+		width:930px;
+		height:2830px;
+		position: absolute ;
+		font-family: Times New Roman;
+		font-size: 20px;
+		
+	}
+.rules
+	{
+
+
+		width:930px;
+		height:210px;
+		background:#a16e2b;
+		color:#fff;
+		left: 19%;
+		top: 38%;
+		position: absolute ;
+		box-sizing:border-box;
+		padding:20px 40px;
+		border-radius:15px;
+		font-family: Times New Roman;
+		font-size: 22px;
+		box-shadow: 10px 10px black;
+	}
+ }
+
+ .b1{
+ 	top:416%; 
+ 	width:200px; 
+ 	height:90px; 
+ 	left: 60% ;
+ 	padding:0px 30px;
+ }
+
+
+.btn:hover
+	{
+		color: #fff;
+		background-color: #00b3db;
+	}
+
+ </style>
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><p>Machine Learning</p></a>
+    </div>
+   
+  </div>
+</nav>
+<nav class="navbar navbar-inverse navbar-fixed-top nav2">
+  <div class="container-fluid">
+	<p><span class="glyphicon glyphicon-hourglass bg" id="demo"></span> </p>
+  </div>
+</nav>
+<div class="container-fluid">
+	<div class="q1" style="top:40%;">
+
+    
+		<h3> Write Rules Here </h3>
+		<br><br><br><br><br><br><br><br>
+		<hr style="color: #000">
+	
+	 <form method="post" name="score" id="score" class="text-center">
+	    {% csrf_token %}
+	
+	
+		<h3> Q1. </h3>
+				<br>
+			<label>
+				<div>
+				<div class="radio">
+					<label><input type="radio" name="q1" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q1" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q1" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q1" value="4">Option 4</label>
+				</div>
+			</div>
+			</label>
+	
+	<br>
+		<h3> Q2. </h3>
+				<br>
+			<label>
+				<div class="radio">
+					<label><input type="radio" name="q2" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q2" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q2" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q2" value="4">Option 4</label>
+				</div>
+			</label>
+	
+	<br>
+
+		<h3> Q3. </h3>
+				<br>
+			<label>
+				<div class="radio">
+					<label><input type="radio" name="q3" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q3" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q3" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q3" value="4">Option 4</label>
+				</div>
+			</label>
+	
+	<br>
+		<h3> Q4. </h3>
+				<br>
+			<label class="text-center">
+				<div class="radio">
+					<label><input type="radio" name="q4" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q4" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q4" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q4" value="4">Option 4</label>
+				</div>
+			</label>
+	<br>
+		<h3> Q5. </h3>
+				<br>
+			<label class="text-center">
+				<div class="radio">
+					<label><input type="radio" name="q5" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q5" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q5" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q5" value="4">Option 4</label>
+				</div>
+			</label>
+	<br>
+		<h3> Q6. </h3>
+				<br>
+			<label>
+				<div class="radio">
+					<label><input type="radio" name="q6" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q6" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q6" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q6" value="4">Option 4</label>
+				</div>
+			</label>
+	<br>
+		<h3> Q7. </h3>
+				<br>
+			<label>
+				<div class="radio">
+					<label><input type="radio" name="q7" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q7" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q7" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q7" value="4">Option 4</label>
+				</div>
+			</label>
+	<br>
+		<h3> Q8. </h3>
+				<br>
+			<label>
+				<div class="radio">
+					<label><input type="radio" name="q8" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q8" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q8" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q8" value="4">Option 4</label>
+				</div>
+			</label>
+	<br>
+		<h3> Q9. </h3>
+				<br>
+			<label>
+				<div class="radio">
+					<label><input type="radio" name="q9" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q9" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q9" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q9" value="4">Option 4</label>
+				</div>
+			</label>
+	<br>
+		<h3> Q10. </h3>
+				<br>
+			<label>
+				<div class="radio">
+					<label><input type="radio" name="q10" value="1" >Option 1</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q10" value="2">Option 2</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q10" value="3">Option 3</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="q10" value="4">Option 4</label>
+				</div>
+			</label>
+	
+	 <div >
+	 <div class="text-center">
+	 	<br>
+		<button type="submit" class="btn btn-lg" value="LOGIN" style="background:#3333ff; top=1000%;" ><h3>Submit</h3></button>
+	</div>
+	</div>
+	</div>
+	</form>
+
+
+</div>
 				
-				<li>Q2</li>
-                <label>
-                <input type="radio" name="q2"  value="1"> 1
-                <input type="radio" name="q2"  value="2"> 2
-                <input type="radio" name="q2"  value="3"> 3
-                <input type="radio" name="q2"  value="4"> 4
-                </label>
-				
-				<li>Q3</li>
-                <label>
-                <input type="radio" name="q3"  value="1"> 1
-                <input type="radio" name="q3"  value="2"> 2
-                <input type="radio" name="q3"  value="3"> 3
-                <input type="radio" name="q3"  value="4"> 4
-                </label>
-				
-				<li>Q4</li>
-                <label>
-                <input type="radio" name="q4"  value="1"> 1
-                <input type="radio" name="q4"  value="2"> 2
-                <input type="radio" name="q4"  value="3"> 3
-                <input type="radio" name="q4"  value="4"> 4
-                </label>
-				
-				<li>Q5</li>
-                <label>
-                <input type="radio" name="q5"  value="1"> 1
-                <input type="radio" name="q5"  value="2"> 2
-                <input type="radio" name="q5"  value="3"> 3
-                <input type="radio" name="q5"  value="4"> 4
-                </label>
-				
-				<li>Q6</li>
-                <label>
-                <input type="radio" name="q6"  value="1"> 1
-                <input type="radio" name="q6"  value="2"> 2
-                <input type="radio" name="q6"  value="3"> 3
-                <input type="radio" name="q6"  value="4"> 4
-                </label>
-				
-				<li>Q7</li>
-                <label>
-                <input type="radio" name="q7"  value="1"> 1
-                <input type="radio" name="q7"  value="2"> 2
-                <input type="radio" name="q7"  value="3"> 3
-                <input type="radio" name="q7"  value="4"> 4
-                </label>
-				
-				<li>Q8</li>
-                <label>
-                <input type="radio" name="q8"  value="1"> 1
-                <input type="radio" name="q8"  value="2"> 2
-                <input type="radio" name="q8"  value="3"> 3
-                <input type="radio" name="q8"  value="4"> 4
-                </label>
-				
-				<li>Q9</li>
-                <label>
-                <input type="radio" name="q9"  value="1"> 1
-                <input type="radio" name="q9"  value="2"> 2
-                <input type="radio" name="q9"  value="3"> 3
-                <input type="radio" name="q9"  value="4"> 4
-                </label>
-				
-				<li>Q10</li>
-                <label>
-                <input type="radio" name="q10"  value="1"> 1
-                <input type="radio" name="q10"  value="2"> 2
-                <input type="radio" name="q10"  value="3"> 3
-                <input type="radio" name="q10"  value="4"> 4
-                </label>
-				
-            </ol>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm" align="center">
-                    <button type="submit" class="btn btn-default">SUBMIT</button>
-                </div>
-            </div>
-        </form>
-    </body>
+
+<script language="JavaScript" type="text/javascript">
+// Set the date we're counting down to
+var countDownDate = new Date( ).getTime();
+countDownDate= countDownDate+1.8e+6;
+   
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+       
+	// Find the distance between now an the count down date
+    var distance = countDownDate - now;
+        
+    // Time calculations for days, hours, minutes and seconds
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    minutes= checkTime(minutes);
+    seconds= checkTime(seconds);
+
+    document.getElementById("demo").innerHTML= minutes + ":" + seconds;
+
+    // If the count down is over, write some text 
+    if (distance < 0) {
+    	window.alert("Timer Expired");
+        window.location.href="/logout";
+        clearInterval(x);
+        document.getElementById("score").submit();
+    }
+    function checkTime(i){
+    	if(i<10) {i="0"+i};
+    	return i;
+    }
+}, 1000);
+</script>
+
+</body>
 </html>
